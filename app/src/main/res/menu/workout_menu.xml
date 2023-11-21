@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/add_workout"
+        android:icon="@drawable/anyadir"
+        android:title="@string/add_workout"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="1"/>
+    <item
+        android:id="@+id/log_outBtn"
+        android:title="@string/log_out"
+        app:showAsAction="never"
+        android:orderInCategory="2"/>
+</menu>

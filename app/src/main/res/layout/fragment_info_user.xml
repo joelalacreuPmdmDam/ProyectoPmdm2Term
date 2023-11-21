@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.InfoUserFragment">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="50dp"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:text="@string/info_user" />
+
+    <TextView
+        android:id="@+id/textViewUserName"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:textSize="18dp"
+        android:text="@string/nombreUser"/>
+
+    <TextView
+        android:id="@+id/textViewUserEmail"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:textSize="18dp"
+        android:text="@string/userEmail"/>
+
+    <TextView
+        android:id="@+id/textViewWeightLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:text="@string/peso"/>
+
+    <EditText
+        android:id="@+id/editTextWeight"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:layout_gravity="center"
+        android:text="71"
+        android:gravity="center"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/textViewHeightLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:text="@string/altura"/>
+
+
+    <EditText
+        android:id="@+id/editTextHeight"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="190dp"
+        android:gravity="center"
+        android:text="1.81"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnExportar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="50dp"
+        android:text="@string/export_data"/>
+
+
+
+
+</FrameLayout>
