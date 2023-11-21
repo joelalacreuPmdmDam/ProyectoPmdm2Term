@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.GymLog" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">#63E3F4</item>
+        <item name="android:textColor">@color/black</item>
     </style>
-
     <style name="Theme.GymLog" parent="Base.Theme.GymLog" />
 </resources>

@@ -15,21 +15,21 @@
     <string name="rm_calculator">CALCULADORA RM</string>
     <string name="timer">ALARMA</string>
     <string name="personal_info">Información personal</string>
-    <string name="calcular">CALCULATE</string>
+    <string name="calcular">CALCULAR</string>
     <string name="rmTitle">Tu 1RM es:</string>
     <string name="reps">REPS</string>
-    <string name="peso">WEIGHT</string>
-    <string name="crear_categoria">CREATE NEW CATEGORY</string>
-    <string name="category_name">Category name</string>
-    <string name="benchPress">BENCH PRESS</string>
-    <string name="log_out">Log out</string>
-    <string name="info_user">User info</string>
-    <string name="export_data">Export data</string>
+    <string name="peso">PESO</string>
+    <string name="crear_categoria">CREAR NUEVA CATEGORIA</string>
+    <string name="category_name">Nombre de la categoria</string>
+    <string name="benchPress">PRESS BANCA</string>
+    <string name="log_out">Salir</string>
+    <string name="info_user">Información del usuario</string>
+    <string name="export_data">Exportar datos</string>
     <string name="instruccionesPressBanca">Instrucciones Detalladas:\nEl press de banca es un ejercicio clásico para desarrollar la fuerza y la masa muscular en el pecho. Sigue estos pasos para realizarlo correctamente:\n\nPosición Inicial:\n\nAcuéstate en un banco plano con los pies apoyados en el suelo.\nAsegúrate de que la barra esté alineada con tu pecho.\nAgarre:\n\nAgarra la barra con las manos ligeramente más anchas que el ancho de tus hombros.\nMantén los codos flexionados a unos 90 grados.\nDescenso:\n\nBaja la barra de manera controlada hacia tu pecho.\nMantén los codos cerca del cuerpo.\nAscenso:\n\nEmpuja la barra hacia arriba extendiendo los codos.\nExhala durante este movimiento.</string>
     <string name="objetivos_pressBanca">Objetivos y Músculos Trabajados:\nEl press de banca se centra principalmente en el desarrollo del músculo pectoral mayor, tríceps y deltoides anterior. Es esencial para mejorar la fuerza en la parte superior del cuerpo.</string>
     <string name="equipamientoPressBanca">Equipamiento Necesario:\n\n· Banco plano\n· Barra y pesas</string>
     <string name="frecuenciaEjercicio">Número de Series y Repeticiones Recomendadas:\n\n3 series de 8-12 repeticiones.\n\n\nDescanso entre Series:\n\nDescansa de 1 a 2 minutos entre cada serie.\n\n\nFrecuencia Recomendada:\n\nIncluye el press de banca en tu rutina de entrenamiento 1-2 veces por semana.</string>
-    <string name="squat">SQUAT</string>
+    <string name="squat">SENTADILLA</string>
     <string name="objetivos_Squat">Objetivos y Músculos Trabajados:\n\nLa sentadilla libre es un ejercicio completo que trabaja los músculos de las piernas, incluyendo cuádriceps, isquiotibiales y glúteos. Además, fortalece la zona lumbar y el core.\n</string>
     <string name="equipamientoSquat">Equipamiento Necesario:\n\n· Barra con pesas (opcional)\n· Rack para sentadillas</string>
     <string name="instruccionesSquat">Instrucciones Detalladas:\n\nLa sentadilla libre es un ejercicio fundamental para trabajar los músculos de las piernas y glúteos. Sigue estos pasos para realizarlo correctamente:\n\n\nPosición Inicial:\n\n- Colócate de pie con los pies a la altura de los hombros.\n- Si estás utilizando una barra, colócala sobre tus hombros, manteniendo la espalda recta.\n\n\nDescenso:\n\n- Flexiona las rodillas y las caderas, como si fueras a sentarte en una silla imaginaria.\n- Baja hasta que tus muslos estén paralelos al suelo o según tu rango de movimiento.\n\n\nAscenso:\n\n- Empuja con los talones para volver a la posición inicial.\n- Recuerda mantener la espalda recta y el abdomen contraído durante todo el movimiento.\n</string>
@@ -39,4 +39,6 @@
     <string name="instruccionesRemo">Instrucciones Detalladas:\n\nEl Seal Row es un ejercicio efectivo para el desarrollo de la espalda y los músculos deltoides. Sigue estos pasos para realizarlo correctamente:\n\n\nPosición Inicial:\n\nAcuéstate boca abajo en un banco horizontal, de modo que tu pecho quede suspendido en el aire.\nAjusta el banco para que tus pies estén firmemente apoyados en el suelo.\n\n\nAgarre:\n\nAgarra la barra con las manos ligeramente más anchas que el ancho de tus hombros.\nMantén los codos flexionados a unos 90 grados.\n\n\nElevación:\n\nLevanta la barra hacia arriba, llevando los codos hacia atrás y apretando los omóplatos.\nAsegúrate de mantener una buena postura y controlar el movimiento en todo momento.\n\n\nDescenso:\n\nBaja la barra de manera controlada hasta la posición inicial.</string>
     <string name="nombreUser">Nombre del Usuario</string>
     <string name="userEmail">Correo del Usuario</string>
+    <string name="altura">ALTURA</string>
+    <string name="coming_soon">(COMING SOON)</string>
 </resources>

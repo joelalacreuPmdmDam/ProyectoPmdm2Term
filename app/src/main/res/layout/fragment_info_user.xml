@@ -21,8 +21,19 @@
         android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
+        android:textStyle="bold"
         android:textSize="18dp"
         android:text="@string/nombreUser"/>
+
+
+    <TextView
+        android:id="@+id/tv_infoName"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:textSize="18dp"
+        android:text="joel"/>
 
     <TextView
         android:id="@+id/textViewUserEmail"
@@ -30,8 +41,18 @@
         android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
+        android:textStyle="bold"
         android:textSize="18dp"
         android:text="@string/userEmail"/>
+
+    <TextView
+        android:id="@+id/tv_infoMail"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        android:textSize="18dp"
+        android:text="joealacap@alu.edu.gva.es"/>
 
     <TextView
         android:id="@+id/textViewWeightLabel"
@@ -40,6 +61,7 @@
         android:layout_marginTop="400dp"
         android:gravity="center"
         android:textSize="18dp"
+        android:textStyle="bold"
         android:text="@string/peso"/>
 
     <EditText
@@ -57,6 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
+        android:textStyle="bold"
         android:gravity="center"
         android:textSize="18dp"
         android:text="@string/altura"/>

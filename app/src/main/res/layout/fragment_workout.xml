@@ -17,6 +17,8 @@
         android:gravity="center"
         android:layout_weight="50"/>
 
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
