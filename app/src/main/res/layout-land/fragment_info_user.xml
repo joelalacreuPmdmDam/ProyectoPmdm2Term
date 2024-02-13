@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.InfoUserFragment">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="10dp"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:text="@string/info_user" />
+
+    <TextView
+        android:id="@+id/textViewUserName"
+        android:layout_width="match_parent"
+        android:gravity="center|left"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="75dp"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="@string/nombreUser"/>
+
+
+    <TextView
+        android:id="@+id/tv_infoName"
+        android:layout_width="match_parent"
+        android:gravity="center|left"
+        android:layout_marginTop="110dp"
+        android:layout_marginStart="75dp"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="joel"/>
+
+    <TextView
+        android:id="@+id/textViewUserEmail"
+        android:layout_width="match_parent"
+        android:gravity="center|right"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="75dp"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:text="@string/userEmail"/>
+
+    <TextView
+        android:id="@+id/tv_infoMail"
+        android:layout_width="match_parent"
+        android:gravity="center|right"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="75dp"
+        android:textSize="18dp"
+        android:text="joealacap@alu.edu.gva.es"/>
+
+    <TextView
+        android:id="@+id/textViewWeightLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:gravity="center|left"
+        android:layout_marginStart="75dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="@string/peso"/>
+
+    <EditText
+        android:id="@+id/editTextWeight"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center|left"
+        android:layout_marginStart="75dp"
+        android:text="71"
+        android:gravity="center"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/textViewHeightLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:textStyle="bold"
+        android:layout_marginEnd="75dp"
+        android:gravity="center|right"
+        android:textSize="18dp"
+        android:text="@string/altura"/>
+
+
+    <EditText
+        android:id="@+id/editTextHeight"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|right"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="75dp"
+        android:gravity="center"
+        android:text="1.81"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnExportar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:text="@string/export_data" />
+
+
+</FrameLayout>

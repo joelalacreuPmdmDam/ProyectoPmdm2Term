@@ -1,0 +1,36 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/chat">
+
+        <EditTextPreference
+            app:key="username"
+            app:title="@string/chat_username"
+            app:useSimpleSummaryProvider="true" />
+
+
+
+        <es.jac.gymlog.classes.ColorPickerPreference
+            android:key="color_preference"
+            android:title="@string/color_picker"
+            android:summary="Selected color will be displayed here"
+            android:defaultValue="@android:color/black" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/cache">
+
+        <SwitchPreferenceCompat
+            app:key="offline_mode_activated"
+            app:title="@string/offline_mode" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/general">
+
+        <CheckBoxPreference
+            app:key="vibrate_activated"
+            app:title="@string/vibrate" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "521654426069",
+    "project_id": "gymlog-8860e",
+    "storage_bucket": "gymlog-8860e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521654426069:android:6b23f12a141de40d02455c",
+        "android_client_info": {
+          "package_name": "es.jac.gymlog"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSgkvhFNsDIf3J4Vcy3xfilhhkdUXhW88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
