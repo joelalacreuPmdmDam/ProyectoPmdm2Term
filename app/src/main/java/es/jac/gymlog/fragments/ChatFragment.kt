@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import es.jac.gymlog.R
 import es.jac.gymlog.adapters.MensajesAdapter
 import es.jac.gymlog.databinding.FragmentChatBinding
 import es.jac.gymlog.managers.FirestoreManager
+import es.jac.gymlog.managers.PushNotificationService
 import es.jac.gymlog.models.Mensaje
 import es.jac.gymlog.models.Usuario
 import kotlinx.coroutines.Dispatchers
@@ -40,6 +42,8 @@ class ChatFragment : Fragment(){
                 lifecycleScope.launch(Dispatchers.IO) {
                     firestoreManager.addMensaje(Mensaje(mensaje = mensaje))
                     withContext(Dispatchers.Main){
+                        var notificationService = PushNotificationService(requireContext())
+                        notificationService.createNotification("GymLog","You have new messages")
                         binding.etMensaje.text.clear()
                         binding.recViewItems.smoothScrollToPosition(mensajesLista.size-1)
                         mAdapter.notifyDataSetChanged()

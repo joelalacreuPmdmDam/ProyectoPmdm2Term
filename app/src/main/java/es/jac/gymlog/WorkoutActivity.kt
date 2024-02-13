@@ -25,6 +25,7 @@ import es.jac.gymlog.fragments.TimerFragment
 import es.jac.gymlog.fragments.WorkoutFragment
 import es.jac.gymlog.databinding.ActivityWorkoutBinding
 import es.jac.gymlog.fragments.ChatFragment
+import es.jac.gymlog.fragments.multimedia.MultimediaFragment
 import es.jac.gymlog.fragments.retrofit_fragment.ExerciseDetailFragment
 import es.jac.gymlog.fragments.retrofit_fragment.ListaEjerciciosFragment
 
@@ -34,6 +35,7 @@ class WorkoutActivity : AppCompatActivity(), ListaEjerciciosFragment.ExerciseLis
 
     companion object{
         private val ACTIVITY_REQUEST_CODE = 200
+        private const val NOTIFICATION_PERMISSION = 1001
     }
 
     private lateinit var binding: ActivityWorkoutBinding
@@ -41,6 +43,8 @@ class WorkoutActivity : AppCompatActivity(), ListaEjerciciosFragment.ExerciseLis
         super.onCreate(savedInstanceState)
         binding = ActivityWorkoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        askNotificationPermission()
 
 
         setSupportActionBar(binding.workoutToolbar)
@@ -157,6 +161,13 @@ class WorkoutActivity : AppCompatActivity(), ListaEjerciciosFragment.ExerciseLis
                 startActivity(intent)
                 return true
             }
+            R.id.multimedia_nav_option -> {
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace<MultimediaFragment>(R.id.fragmentContainerView_workoutActivity)
+                }
+                return true
+            }
             else -> {
                 return false
             }
@@ -230,6 +241,21 @@ class WorkoutActivity : AppCompatActivity(), ListaEjerciciosFragment.ExerciseLis
             addToBackStack(null)
         }
     }
+
+    //Notifications
+    private fun askNotificationPermission() {
+        if(ContextCompat.
+            checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+            != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                NOTIFICATION_PERMISSION
+            )
+        }
+    }
+
+
 
 
 }

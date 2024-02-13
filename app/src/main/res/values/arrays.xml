@@ -9,4 +9,11 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+
+    <string-array name="video_names">
+        <item>benisport</item>
+        <item>video_press_banca</item>
+        <item>vide_seal_row</item>
+        <item>video_squat</item>
+    </string-array>
 </resources>

@@ -71,4 +71,7 @@
     <string name="exercise_instructions">"Instructions: "</string>
     <string name="type_muscle">Type a muscle</string>
     <string name="search">Search</string>
+    <string name="load">Load</string>
+    <string name="multimedia">Multimedia</string>
+    <string name="notificationContent">You have a new message</string>
 </resources>

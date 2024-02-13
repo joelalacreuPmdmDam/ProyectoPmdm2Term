@@ -52,8 +52,10 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.8.2")//CallBackFlow
     implementation("com.squareup.retrofit2:retrofit:2.9.0")//Retrofit
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")//Retrofit
-    implementation("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")//RoomDb
+    kapt("androidx.room:room-compiler:2.6.1")//RoomDb
+    implementation("com.google.firebase:firebase-messaging-ktx")//Notifications
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))//Notifications
 
     //END
 

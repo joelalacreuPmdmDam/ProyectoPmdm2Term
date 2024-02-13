@@ -72,4 +72,7 @@
     <string name="search">Search</string>
     <string name="notInfoCache">That info is not in the cache</string>
     <string name="noConexion">No internet conection</string>
+    <string name="load">Load</string>
+    <string name="multimedia">Multimedia</string>
+    <string name="notificationContent">You have a new message</string>
 </resources>
