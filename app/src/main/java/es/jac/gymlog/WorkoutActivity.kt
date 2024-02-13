@@ -1,31 +1,35 @@
 package es.jac.gymlog
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
-import es.jac.gymlog.Classes.CategoriaEjercicio
-import es.jac.gymlog.Fragments.BenchPressFragment
-import es.jac.gymlog.Fragments.CategoriasEjerciciosList
-import es.jac.gymlog.Fragments.InfoUserFragment
-import es.jac.gymlog.Fragments.LogOutDialogFragment
-import es.jac.gymlog.Fragments.RmCalculatorFragment
-import es.jac.gymlog.Fragments.SealRowFragment
-import es.jac.gymlog.Fragments.SquatFragment
-import es.jac.gymlog.Fragments.TimerFragment
-import es.jac.gymlog.Fragments.WorkoutFragment
+import com.google.android.material.navigation.NavigationView
+import es.jac.gymlog.managers.AuthManager
+import es.jac.gymlog.fragments.InfoUserFragment
+import es.jac.gymlog.fragments.dialogs.LogOutDialogFragment
+import es.jac.gymlog.fragments.RmCalculatorFragment
+import es.jac.gymlog.fragments.TimerFragment
+import es.jac.gymlog.fragments.WorkoutFragment
 import es.jac.gymlog.databinding.ActivityWorkoutBinding
+import es.jac.gymlog.fragments.ChatFragment
+import es.jac.gymlog.fragments.retrofit_fragment.ExerciseDetailFragment
+import es.jac.gymlog.fragments.retrofit_fragment.ListaEjerciciosFragment
 
-class WorkoutActivity : AppCompatActivity(), CategoriasEjerciciosList.CategoriasListListener,
-    WorkoutFragment.OnBtnBottomBarClicked,LogOutDialogFragment.LogOutDialogListener,
+class WorkoutActivity : AppCompatActivity(), ListaEjerciciosFragment.ExerciseListListener,
+    LogOutDialogFragment.LogOutDialogListener, NavigationView.OnNavigationItemSelectedListener,
     InfoUserFragment.InfoUserListener{
 
     companion object{
@@ -38,10 +42,24 @@ class WorkoutActivity : AppCompatActivity(), CategoriasEjerciciosList.Categorias
         binding = ActivityWorkoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         setSupportActionBar(binding.workoutToolbar)
+        setUpNavigationDrawer()
     }
 
+    override fun onResume() {
+        super.onResume()
+        val prefs = getSharedPreferences("es.jac.gymlog_preferences", MODE_PRIVATE)
+        val nombre = prefs.getString("username","")
+        //Acceder al txt del header que contiene el nombre
+        val headerNavigationView = binding.navigationView.getHeaderView(0)
+        val txtNombreHeader = headerNavigationView.findViewById<TextView>(R.id.nav_myName)
+        txtNombreHeader.text = nombre
+        //Acceder al txt del header que contiene el email
+        val txtEmailHeader = headerNavigationView.findViewById<TextView>(R.id.nav_myEmail)
+        txtEmailHeader.text = AuthManager().getCurrentUser()?.email
 
+    }
 
 
     //Creacion de la toolbar
@@ -56,75 +74,114 @@ class WorkoutActivity : AppCompatActivity(), CategoriasEjerciciosList.Categorias
             R.id.add_workout -> {
                 supportFragmentManager.commit {
                     setReorderingAllowed(true)
-                    replace<CategoriasEjerciciosList>(R.id.fragmentContainerView_workoutActivity)
+                    replace<ListaEjerciciosFragment>(R.id.fragmentContainerView_workoutActivity)
                     addToBackStack(null)
                 }
                 true
             }
             R.id.log_outBtn -> {
                 LogOutDialogFragment().show(this.supportFragmentManager,"")
-
                 true
             }
             else -> false
         }
     }
 
-    //OnClick item lista ejercicios
-    override fun onItemClick(categoria: CategoriaEjercicio) {
-        if (categoria.idCategoria == 1){
+
+
+
+    //NavigationDrawer config start
+    private fun setUpNavigationDrawer() {
+        val toggle = ActionBarDrawerToggle(
+            this,
+            binding.drawerLayout,
+            binding.workoutToolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        )
+
+        binding.drawerLayout?.addDrawerListener(toggle)
+        toggle.syncState()
+        binding.navigationView?.setNavigationItemSelectedListener(this)
+
+        //Check the first option
+        //binding.navigationView.setCheckedItem(R.id.nav_camera)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        binding.drawerLayout?.closeDrawer(GravityCompat.START)
+
+        return when(item.itemId) {
+            R.id.home_nav_option -> {
                 supportFragmentManager.commit {
                     setReorderingAllowed(true)
-                    replace<BenchPressFragment>(R.id.fragmentContainerView_workoutActivity)
-                    addToBackStack(null)
+                    replace<WorkoutFragment>(R.id.fragmentContainerView_workoutActivity)
                 }
-        }else if(categoria.idCategoria == 2){
-            supportFragmentManager.commit {
-                setReorderingAllowed(true)
-                replace<SealRowFragment>(R.id.fragmentContainerView_workoutActivity)
-                addToBackStack(null)
+                return true
             }
+
+            R.id.rm_calculator_nav_option -> {
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace<RmCalculatorFragment>(R.id.fragmentContainerView_workoutActivity)
+                }
+                return true
+            }
+
+            R.id.timer_nav_option -> {
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace<TimerFragment>(R.id.fragmentContainerView_workoutActivity)
+                }
+                return true
+            }
+
+            R.id.chat_nav_option -> {
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace<ChatFragment>(R.id.fragmentContainerView_workoutActivity)
+                }
+                return true
+            }
+
+            R.id.personal_information_nav_option -> {
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace<InfoUserFragment>(R.id.fragmentContainerView_workoutActivity)
+                }
+                return true
+            }
+
+            R.id.settings_nav_option -> {
+                val intent = Intent(this,SettingsActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            else -> {
+                return false
+            }
+        }
+
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onBackPressed() {
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)){
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
         }else{
-            supportFragmentManager.commit {
-                setReorderingAllowed(true)
-                replace<SquatFragment>(R.id.fragmentContainerView_workoutActivity)
-                addToBackStack(null)
-            }
+            onBackPressedDispatcher.onBackPressed()
         }
     }
 
-    //Start botones de la bottom  bar
-    override fun itemCalculadoraRmClicked() {
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            replace<RmCalculatorFragment>(R.id.fragmentContainerView_workoutActivity)
-            addToBackStack(null)
-        }
-    }
-
-    override fun itemTimerClicked() {
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            replace<TimerFragment>(R.id.fragmentContainerView_workoutActivity)
-            addToBackStack(null)
-        }
-
-    }
-
-    override fun itemPersonalInfoClicked() {
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            replace<InfoUserFragment>(R.id.fragmentContainerView_workoutActivity)
-            addToBackStack(null)
-        }
-    }
-    //END
+    //NavigationDrawer config end
 
 
     //Boton 'OK' del  dialogo
     override fun onDialogPositiveBtnClicked() {
+        AuthManager().logOut()
         val intent = Intent(this,LogInActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
     override fun onExportarBtnClicked() {
@@ -155,6 +212,22 @@ class WorkoutActivity : AppCompatActivity(), CategoriasEjerciciosList.Categorias
             }
         }else{
             super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        }
+    }
+
+    override fun onSearchBtnClicked() {
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            replace<ExerciseDetailFragment>(R.id.fragmentContainerView_workoutActivity)
+            addToBackStack(null)
+        }
+    }
+
+    override fun onInfoBtnClicked() {
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            replace<ExerciseDetailFragment>(R.id.fragmentContainerView_workoutActivity)
+            addToBackStack(null)
         }
     }
 

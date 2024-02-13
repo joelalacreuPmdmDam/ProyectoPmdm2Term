@@ -1,15 +1,13 @@
-package es.jac.gymlog.Fragments
+package es.jac.gymlog.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import es.jac.gymlog.R
+import es.jac.gymlog.managers.AuthManager
 import es.jac.gymlog.databinding.FragmentInfoUserBinding
 
 
@@ -34,6 +32,7 @@ class InfoUserFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentInfoUserBinding.inflate(inflater,container,false)
+        binding.etInfoMail?.setText(AuthManager().getCurrentUser()!!?.email.toString())
         binding.btnExportar.setOnClickListener(this)
         return binding.root
     }

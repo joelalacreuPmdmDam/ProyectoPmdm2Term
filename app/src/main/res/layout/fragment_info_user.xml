@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.InfoUserFragment">
+    tools:context=".fragments.InfoUserFragment">
 
 
     <TextView
@@ -45,14 +45,14 @@
         android:textSize="18dp"
         android:text="@string/userEmail"/>
 
-    <TextView
-        android:id="@+id/tv_infoMail"
+    <EditText
+        android:id="@+id/et_infoMail"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_marginTop="330dp"
         android:textSize="18dp"
-        android:text="joealacap@alu.edu.gva.es"/>
+        android:text=""/>
 
     <TextView
         android:id="@+id/textViewWeightLabel"

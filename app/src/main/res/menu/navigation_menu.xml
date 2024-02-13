@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_nav_option"
+            android:icon="@drawable/home_img"
+            android:title="@string/home_nav_string"/>
+        <item
+            android:id="@+id/rm_calculator_nav_option"
+            android:icon="@drawable/rm_calculator_img"
+            android:title="@string/rm_calculator"/>
+        <item
+            android:id="@+id/timer_nav_option"
+            android:icon="@drawable/timmer_img"
+            android:title="@string/timer"/>
+        <item
+            android:id="@+id/chat_nav_option"
+            android:icon="@drawable/chat_img"
+            android:title="@string/chat"/>
+        <item
+            android:id="@+id/personal_information_nav_option"
+            android:icon="@drawable/personal_info_img"
+            android:title="@string/personal_info"/>
+        <item
+            android:id="@+id/settings_nav_option"
+            android:icon="@drawable/settings_img"
+            android:title="@string/settings"/>
+
+    </group>
+</menu>

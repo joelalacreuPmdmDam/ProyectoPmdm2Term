@@ -1,4 +1,4 @@
-package es.jac.gymlog.Fragments
+package es.jac.gymlog.fragments.login
 
 import android.content.Context
 import android.os.Bundle
